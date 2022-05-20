@@ -17,7 +17,7 @@ const ProductForm = props => {
             <h3 className={styles.optionLabel}>Colors</h3>
             <OptionColor colors={props.colors} setCurrentColor={props.setCurrentColor} />
           </div>
-          <Button className={styles.button} color={props.currentColor} size={props.currentSize.name} item={props.title} price={props.price(props.currentSize.additionalPrice)}>
+          <Button className={styles.button} color={props.currentColor} size={props.currentSize.name} item={props.title} price={props.price}>
             <span className="fa fa-shopping-cart" />
           </Button>
         </form>
@@ -29,9 +29,9 @@ ProductForm.propTypes = {
     sizes: PropTypes.array,
     currentColor: PropTypes.string,
     currentSize: PropTypes.object,
-    price: PropTypes.func,
     setCurrentColor: PropTypes.func,
     setCurrentSize: PropTypes.func,
+    price: PropTypes.number,
   };
 
 export default ProductForm;
